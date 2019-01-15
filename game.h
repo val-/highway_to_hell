@@ -10,12 +10,22 @@
 
 class Game: public QGraphicsView{
 public:
-    Game(QWidget * parent=nullptr);
+    Game();
 
     QGraphicsScene * scene;
     Player * player;
     Road * road;
     Traffic * trafic;
+
+    void stop();
+    void start();
+
+    bool isOver() {
+        return over;
+    }
+
+private:
+    bool over = false;
 
 };
 

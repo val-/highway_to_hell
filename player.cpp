@@ -1,6 +1,9 @@
 #include "player.h"
+#include "game.h"
 #include <QGraphicsScene>
 #include <QKeyEvent>
+
+extern Game * game;
 
 Player::Player(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent) {
 
@@ -16,9 +19,15 @@ Player::Player(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent) {
 
 }
 
-void Player::keyPressEvent(QKeyEvent *event){
+void Player::keyPressEvent(QKeyEvent *event) {
 
-    if (event->key() == Qt::Key_Left) {
+    if (event->key() == Qt::Key_Space) {
+        if (game->isOver()) {
+            game->start();
+        } else {
+            game->stop();
+        }
+    } else if (event->key() == Qt::Key_Left) {
         rate -= 12;
     } else if (event->key() == Qt::Key_Right) {
         rate += 12;

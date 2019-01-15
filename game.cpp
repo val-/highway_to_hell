@@ -3,7 +3,7 @@
 #include <QBrush>
 #include <QImage>
 
-Game::Game(QWidget *parent){
+Game::Game(){
 
     scene = new QGraphicsScene();
     scene->setSceneRect(0,0,400,800);
@@ -25,4 +25,24 @@ Game::Game(QWidget *parent){
     trafic = new Traffic();
 
     show();
+
 }
+
+void Game::stop() {
+    if (!over) {
+        over = true;
+        road->stop();
+        trafic->stop();
+    }
+}
+
+void Game::start() {
+    if (over) {
+        over = false;
+        road->start();
+        trafic->clear();
+        trafic->start();
+    }
+}
+
+
