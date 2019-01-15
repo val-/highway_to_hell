@@ -2,4 +2,42 @@
 
 Qt homework game
 
-<img src="https://3.downloader.disk.yandex.ru/preview/6f69d7ae7980e6cc39dec6b2227fc83b3b6a4b27546fe18560bfcb1ddac07e9a/inf/PSE3fmmaKZWl2lQDbwQQMXyG4bszYzU1bi9PtoN7P24GPhW-nddWSMlqORNDOyr8a5zMb1Yih-uPq_9zI4PQ8A%3D%3D?uid=23527416&filename=Screenshot%20from%202019-01-15%2020.14.47.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&tknv=v2&size=1440x837">
+<img src="http://i63.tinypic.com/2i8ah01.jpg"/> <img src="http://i65.tinypic.com/2s6kps2.jpg"/>
+
+## Класс Game
+
+Представляет сущность "Игра".
+Имеет методы `start()`, `stop()` и флаг `over`.
+Инициализирует и хранит в себе ссылки на экземпляры классов "Игрок", "Сцена", "Дорога" и "Трафик".
+
+
+## Класс Player
+
+Представляет сущность "Игрок".
+Имеет методы:
+* `updateRate()` - изменение скорости
+* `updatePosition()` - изменение положения
+* `keyPressEvent()` - обработка нажатия кнопок
+Есть поведение по таймеру.
+
+
+## Класс Traffic
+
+Представляет сущность "Трафик" - генерирует и управляет потоком машин.
+Имеет методы `start()`, `stop()`, `clear()`, `spawn()`.
+Есть поведение по таймеру.
+
+
+## Класс Car
+
+Представляет сущность "Машина".
+Имеет методы `move()`, `stop()`, `remove()` и поле `speed`.
+Есть поведение по таймеру.
+
+
+## Класс Road
+
+Представляет сущность "Дорога" - декоративная анимированная подложка.
+Имеет методы `start()`, `stop()`, `updatePosition()`.
+Есть поведение по таймеру.
+
